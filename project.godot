@@ -1,0 +1,73 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Damager",
+"language": "GDScript",
+"path": "res://Addons/HealthSystem/Damager.gd"
+}, {
+"base": "Node",
+"class": "Healer",
+"language": "GDScript",
+"path": "res://Addons/HealthSystem/Healer.gd"
+}, {
+"base": "Node",
+"class": "HealthSystem",
+"language": "GDScript",
+"path": "res://Addons/HealthSystem/HealthSystem.gd"
+}, {
+"base": "Node2D",
+"class": "Movement2D",
+"language": "GDScript",
+"path": "res://Addons/KinematicMovement2D/Movement2D.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Addons/StateMachine/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Addons/StateMachine/StateMachine.gd"
+}, {
+"base": "Node2D",
+"class": "TopDownMovement2D",
+"language": "GDScript",
+"path": "res://Addons/KinematicMovement2D/TopDownMovement2D.gd"
+} ]
+_global_script_class_icons={
+"Damager": "res://Addons/HealthSystem/health-decrease.png",
+"Healer": "res://Addons/HealthSystem/health-increase.png",
+"HealthSystem": "res://Addons/HealthSystem/health.png",
+"Movement2D": "res://Addons/KinematicMovement2D/move.png",
+"State": "res://Addons/StateMachine/state.png",
+"StateMachine": "res://Addons/StateMachine/stateMachine.png",
+"TopDownMovement2D": "res://Addons/KinematicMovement2D/topDown.png"
+}
+
+[application]
+
+config/name="REUSABLE_ASSETS"
+run/main_scene="res://Test/KinematicBody2D.tscn"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Addons/KinematicMovement2D/TopDownMovement2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Addons/HealthSystem/HealthSystem.gd" type="Script" id=3]
+[ext_resource path="res://Addons/StateMachine/StateMachine.gd" type="Script" id=4]
+[ext_resource path="res://Addons/StateMachine/State.gd" type="Script" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	$TopDownMovement2D.move(self, $TopDownMovement2D.get_input_direction())
+	
+"
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 286, 174 )
+script = SubResource( 1 )
+
+[node name="TopDownMovement2D" type="Node2D" parent="."]
+script = ExtResource( 1 )
+max_speed = 300.0
+slide = 0.99
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="State" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
