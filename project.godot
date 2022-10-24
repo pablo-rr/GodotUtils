@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="REUSABLE_ASSETS"
-run/main_scene="res://Test/KinematicBody2D.tscn"
+run/main_scene="res://Test/Map.tscn"
 config/icon="res://icon.png"
 
 [gui]

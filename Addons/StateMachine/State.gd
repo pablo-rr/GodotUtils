@@ -4,9 +4,10 @@ extends Node
 signal entered(message)
 signal exited
 
-onready var state_machine : StateMachine = null
+# Must be StateMachine
+var state_machine = null
 
-func handle_inpunt(event : InputEvent) -> void:
+func handle_input(event : InputEvent) -> void:
 	pass
 
 func process(delta : float) -> void:

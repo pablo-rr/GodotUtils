@@ -9,6 +9,9 @@ signal fatally_damaged
 export(int, 1, 500000, 1) var max_health : int = 100
 onready var health : int = max_health
 
+func _ready() -> void:
+	print(health)
+
 func heal(health : int) -> void:
 	self.health += health
 	emit_signal("healed")
